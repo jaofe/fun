@@ -23,23 +23,28 @@ def capcha():
         base_path = os.path.abspath(".")
 
     captcha_directory = os.path.join(base_path, "CAPCHA")
-    captcha_images = [img for img in os.listdir(captcha_directory) if img.endswith('.png')]
+    
+    # Hard-code the number of CAPTCHA images
+    captcha_count = 1040
 
-    # Function to get a random CAPTCHA
+    # Function to get a random CAPTCHA image without listing all
     def get_random_captcha():
-        return random.choice(captcha_images)
+        random_index = random.randint(0, captcha_count - 1)
+        return os.listdir(captcha_directory)[random_index]
 
     def block_keys():
         keyboard.block_key('alt')
         keyboard.block_key('tab')
         keyboard.block_key('windows')
         keyboard.block_key('esc')
+        keyboard.block_key('ctrl')
 
     def unblock_keys():
         keyboard.unblock_key('alt')
         keyboard.unblock_key('tab')
         keyboard.unblock_key('windows')
         keyboard.unblock_key('esc')
+        keyboard.block_key('ctrl')
 
     # Function to display CAPTCHA and verify input
     def run_captcha():
