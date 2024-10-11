@@ -44,7 +44,7 @@ def capcha():
         keyboard.unblock_key('tab')
         keyboard.unblock_key('windows')
         keyboard.unblock_key('esc')
-        keyboard.block_key('ctrl')
+        keyboard.unblock_key('ctrl')
 
     # Function to display CAPTCHA and verify input
     def run_captcha():
