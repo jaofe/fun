@@ -10,7 +10,7 @@ call venv\Scripts\activate
 pip install -r requirements.txt
 
 :: Run PyInstaller with the specified options
-pyinstaller --onefile --name=self_destruct --icon=icon.ico main.py --add-data "CAPCHA/*;CAPCHA" --noconsole
+pyinstaller --onefile --name=fun --icon=icon.ico main.py --add-data "CAPCHA/*;CAPCHA" --noconsole
 
 :: Deactivate the virtual environment
 call venv\Scripts\deactivate
