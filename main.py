@@ -10,9 +10,11 @@ WAIT_TIME = 1800
 def capcha():
     pygame.init()
 
+
     info = pygame.display.Info()
     screen = pygame.display.set_mode((info.current_w, info.current_h), pygame.FULLSCREEN)
     pygame.display.set_caption("CAPTCHA Verification")
+    pygame.event.set_grab(True)
 
     # Update path for PyInstaller
     if getattr(sys, 'frozen', False):
