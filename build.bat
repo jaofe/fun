@@ -7,6 +7,7 @@ python -m venv venv
 call venv\Scripts\activate
 
 :: Install requirements
+python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 
 :: Run PyInstaller with the specified options
